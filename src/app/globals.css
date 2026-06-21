@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts ────────────────────────────────────────────────────────────────── */
+/* Loaded via next/font in layout.tsx; CSS vars injected on <html> */
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    background-color: #060C18;
+    color: #EDE8E0;
+  }
+
+  ::selection {
+    background-color: rgba(200, 146, 26, 0.3);
+    color: #F0BE40;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C8921A;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────────────────────────────── */
+@layer utilities {
+
+  /* Circuit board background pattern */
+  .bg-circuit-pattern {
+    background-image: radial-gradient(circle, rgba(200, 146, 26, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #C8921A 0%, #F0BE40 45%, #C8921A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Scroll reveal — initial state */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger helpers */
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.10s; }
+  .stagger-3 { transition-delay: 0.15s; }
+  .stagger-4 { transition-delay: 0.20s; }
+  .stagger-5 { transition-delay: 0.25s; }
+  .stagger-6 { transition-delay: 0.30s; }
+  .stagger-7 { transition-delay: 0.35s; }
+  .stagger-8 { transition-delay: 0.40s; }
+}
+
+/* ─── Pipeline animation ────────────────────────────────────────────────────── */
+@keyframes pipeline-step {
+  0%, 10%  { opacity: 0; transform: translateX(-10px); }
+  25%, 80% { opacity: 1; transform: translateX(0);     }
+  90%, 100%{ opacity: 0; transform: translateX(-10px); }
+}
+
+.pipeline-step-1 { animation: pipeline-step 1.4s ease 0.0s both infinite; }
+.pipeline-step-2 { animation: pipeline-step 1.4s ease 0.3s both infinite; }
+.pipeline-step-3 { animation: pipeline-step 1.4s ease 0.6s both infinite; }
+.pipeline-step-4 { animation: pipeline-step 1.4s ease 0.9s both infinite; }
+.pipeline-step-5 { animation: pipeline-step 1.4s ease 1.2s both infinite; }
+
+/* Pause if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pipeline-step-1,
+  .pipeline-step-2,
+  .pipeline-step-3,
+  .pipeline-step-4,
+  .pipeline-step-5 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #060C18; }
+::-webkit-scrollbar-thumb { background: #1C2C47; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C8921A; }
