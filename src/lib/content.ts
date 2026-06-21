@@ -9,11 +9,12 @@ export const DOCS_URL   = 'https://github.com/farisi55/native-openclaw#readme'
 // ─── Nav ─────────────────────────────────────────────────────────────────────
 
 export const navLinks: NavLink[] = [
-  { label: { en: 'Features',  id: 'Fitur'           }, href: '#features'  },
-  { label: { en: 'Self-Heal', id: 'Self-Heal'        }, href: '#selfheal'  },
-  { label: { en: 'Providers', id: 'Provider'         }, href: '#providers' },
-  { label: { en: 'Use Cases', id: 'Kasus Penggunaan' }, href: '#usecases'  },
-  { label: { en: 'GitHub',    id: 'GitHub'           }, href: GITHUB_URL   },
+  { label: { en: 'Superpowers', id: 'Keunggulan'      }, href: '#self-capabilities' },
+  { label: { en: 'Features',    id: 'Fitur'           }, href: '#features'          },
+  { label: { en: 'Self-Heal',   id: 'Self-Heal'       }, href: '#selfheal'          },
+  { label: { en: 'Providers',   id: 'Provider'        }, href: '#providers'         },
+  { label: { en: 'Use Cases',   id: 'Kasus Penggunaan'}, href: '#usecases'          },
+  { label: { en: 'GitHub',      id: 'GitHub'          }, href: GITHUB_URL           },
 ]
 
 export const navCta = { en: 'Get Started', id: 'Mulai' }

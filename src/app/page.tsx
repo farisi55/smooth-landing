@@ -1,6 +1,7 @@
 import { Nav }           from '@/components/layout/Nav'
 import { Footer }        from '@/components/layout/Footer'
 import { Hero }          from '@/components/sections/Hero'
+import { FourSelfCapabilities } from '@/components/sections/FourSelfCapabilities'
 import { Problem }       from '@/components/sections/Problem'
 import { WhatIsSmooth }  from '@/components/sections/WhatIsSmooth'
 import { Install }       from '@/components/sections/Install'
@@ -18,6 +19,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <FourSelfCapabilities />
         <Problem />
         <WhatIsSmooth />
         <Install />

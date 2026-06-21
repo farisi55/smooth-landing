@@ -12,7 +12,7 @@ export function Nav() {
 
   // Close menu on resize to desktop
   useEffect(() => {
-    const handler = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
+    const handler = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)
   }, [])
@@ -21,16 +21,16 @@ export function Nav() {
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b border-bg-border bg-bg-root/95 backdrop-blur-md"
     >
-      <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+      <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
 
         {/* Logo */}
         <a href="#" className="flex-shrink-0 flex items-center group" aria-label="smooth home">
-          <span className="relative block h-12 w-40 overflow-hidden sm:w-44">
+          <span className="relative block h-12 w-36 overflow-hidden xl:w-44">
             <Image
               src="/smooth-logo-cropped.png"
               alt="smooth"
               fill
-              sizes="(min-width: 640px) 176px, 160px"
+              sizes="(min-width: 1280px) 176px, 144px"
               className="object-contain object-left"
               priority
             />
@@ -38,12 +38,12 @@ export function Nav() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {navLinks.map(link => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-3 py-1.5 text-sm text-content-secondary hover:text-content-primary
+                className="px-2.5 py-1.5 text-sm text-content-secondary hover:text-content-primary
                            rounded-md hover:bg-bg-elevated transition-colors duration-150"
               >
                 {t(link.label)}
@@ -82,7 +82,7 @@ export function Nav() {
           <button
             onClick={() => setMenuOpen(m => !m)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden p-2 text-content-secondary hover:text-content-primary
+            className="lg:hidden p-2 text-content-secondary hover:text-content-primary
                        rounded-md hover:bg-bg-elevated transition-colors"
           >
             {menuOpen ? <XIcon /> : <MenuIcon />}
@@ -92,7 +92,7 @@ export function Nav() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-bg-border bg-bg-root/95 backdrop-blur-md">
+        <div className="lg:hidden border-t border-bg-border bg-bg-root/95 backdrop-blur-md">
           <ul className="px-5 py-4 flex flex-col gap-1">
             {navLinks.map(link => (
               <li key={link.href}>
