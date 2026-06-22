@@ -96,8 +96,10 @@ npm run cloudflare:preview
 
 ```bash
 npx wrangler login
-npm run cloudflare:deploy
+npm run deploy
 ```
+
+Script ini memakai `wrangler pages deploy out --project-name smooth-ai`.
 
 **Via Direct Upload (tanpa GitHub):**
 1. Buka https://pages.cloudflare.com
@@ -115,7 +117,12 @@ Di Cloudflare Pages:
 - Framework preset: `Next.js (Static HTML Export)`
 - Build command: `npm run build`
 - Build output directory: `out`
+- Deploy command: kosongkan. Jangan pakai `npx wrangler deploy`.
 - Node version: `22` (otomatis dari `.node-version`)
+
+Jika deploy log menampilkan `Executing user deploy command: npx wrangler deploy`,
+hapus deploy command tersebut di Cloudflare Pages. Command itu untuk Cloudflare Workers
+dan akan memicu migrasi OpenNext, padahal project ini sudah static export ke `out/`.
 
 ## Warna Brand
 
