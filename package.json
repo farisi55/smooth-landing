@@ -9,8 +9,10 @@
     "lint": "next lint",
     "preview": "npm run cloudflare:preview",
     "deploy": "npm run cloudflare:deploy",
-    "cloudflare:preview": "npm run build && npx wrangler pages dev out",
-    "cloudflare:deploy": "npm run build && npx wrangler pages deploy out --project-name smooth-ai"
+    "cloudflare:preview": "npm run build && npx wrangler dev",
+    "cloudflare:deploy": "npm run build && npx wrangler deploy",
+    "cloudflare:pages:preview": "npm run build && npx wrangler pages dev out",
+    "cloudflare:pages:deploy": "npm run build && npx wrangler pages deploy out --project-name smooth-ai"
   },
   "dependencies": {
     "next": "15.3.9",

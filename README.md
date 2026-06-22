@@ -72,12 +72,12 @@ Cari dan replace `https://github.com/your-org/native-openclaw` di:
 2. Import di `src/app/page.tsx`
 3. Tambah content di `src/lib/content.ts`
 
-## Build & Deploy ke Cloudflare Pages
+## Build & Deploy ke Cloudflare
 
-Project ini sudah disiapkan untuk Cloudflare Pages sebagai static Next.js export:
+Project ini sudah disiapkan sebagai static Next.js export:
 
 - `next.config.mjs` memakai `output: 'export'`, sehingga `npm run build` menghasilkan folder `out/`.
-- `wrangler.toml` memakai `pages_build_output_dir = "./out"`.
+- `wrangler.toml` memakai `[assets] directory = "./out"`, sehingga cocok dengan dashboard yang menjalankan `npx wrangler deploy`.
 - `.node-version` memakai Node 22 agar build Cloudflare kompatibel dengan Next.js 15.
 - `public/_headers` akan ikut masuk ke `out/_headers` untuk security headers dan cache aset Next.js.
 
@@ -92,16 +92,22 @@ npm run build
 npm run cloudflare:preview
 ```
 
-**Deploy via Wrangler:**
+**Deploy via Wrangler / Workers Static Assets:**
 
 ```bash
 npx wrangler login
 npm run deploy
 ```
 
-Script ini memakai `wrangler pages deploy out --project-name smooth-ai`.
+Script ini memakai `wrangler deploy` dan meng-upload static assets dari folder `out/`.
 
-**Via Direct Upload (tanpa GitHub):**
+**Cloudflare Workers dashboard config:**
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Version command: `npx wrangler versions upload`
+- Root directory: `/`
+
+**Alternatif: Cloudflare Pages Direct Upload (tanpa GitHub):**
 1. Buka https://pages.cloudflare.com
 2. Create Project → Direct Upload
 3. Upload seluruh folder `out/`
@@ -113,16 +119,12 @@ git remote add origin https://github.com/username/smooth-landing.git
 git push -u origin main
 ```
 
-Di Cloudflare Pages:
+**Alternatif: Cloudflare Pages Git integration:**
 - Framework preset: `Next.js (Static HTML Export)`
 - Build command: `npm run build`
 - Build output directory: `out`
 - Deploy command: kosongkan. Jangan pakai `npx wrangler deploy`.
 - Node version: `22` (otomatis dari `.node-version`)
-
-Jika deploy log menampilkan `Executing user deploy command: npx wrangler deploy`,
-hapus deploy command tersebut di Cloudflare Pages. Command itu untuk Cloudflare Workers
-dan akan memicu migrasi OpenNext, padahal project ini sudah static export ke `out/`.
 
 ## Warna Brand
 

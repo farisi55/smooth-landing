@@ -1,5 +1,12 @@
-# Cloudflare Pages configuration for the static Next.js export.
-# Use `wrangler pages deploy`, not `wrangler deploy`, for this project.
+# Cloudflare configuration for the static Next.js export.
 name = "smooth-ai"
-pages_build_output_dir = "./out"
 compatibility_date = "2026-06-22"
+
+# Cloudflare Workers Static Assets.
+# This makes the dashboard deploy command `npx wrangler deploy` work.
+[assets]
+directory = "./out"
+not_found_handling = "404-page"
+
+# Cloudflare Pages can still deploy this project with:
+# npx wrangler pages deploy out --project-name smooth-ai
