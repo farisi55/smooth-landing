@@ -81,7 +81,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <a href={GITHUB_URL}
                className="hover:text-gold transition-colors">GitHub</a>
-            <a href="#" className="hover:text-gold transition-colors">Docs</a>
+            <a href={DOCS_URL} className="hover:text-gold transition-colors">Docs</a>
           </div>
         </div>
       </div>

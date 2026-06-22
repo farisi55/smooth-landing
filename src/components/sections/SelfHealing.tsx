@@ -3,7 +3,7 @@
 import { useLanguage } from '@/context/LanguageContext'
 import { Button } from '@/components/ui/Button'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-import { selfHeal, pipelineSteps } from '@/lib/content'
+import { selfHeal, pipelineSteps, DOCS_URL } from '@/lib/content'
 
 const stepClasses = [
   'pipeline-step-1',
@@ -54,7 +54,7 @@ export function SelfHealing() {
             </ScrollReveal>
 
             <ScrollReveal delay={220}>
-              <Button href="#" variant="outline" size="md">
+              <Button href={DOCS_URL} variant="outline" size="md">
                 {t(selfHeal.cta)}
                 <DocIcon />
               </Button>
