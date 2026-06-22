@@ -1,0 +1,4 @@
+# Cloudflare Pages configuration for the static Next.js export.
+name = "smooth-landing"
+pages_build_output_dir = "./out"
+compatibility_date = "2026-06-22"

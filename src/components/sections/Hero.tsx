@@ -37,8 +37,8 @@ export function Hero() {
 
             {/* Headline */}
             <h1
-              className="font-display font-extrabold leading-[1.05] tracking-tight mb-6 animate-fade-up"
-              style={{ animationDelay: '200ms', fontSize: 'clamp(40px, 6vw, 68px)' }}
+              className="font-display font-extrabold leading-[1.14] tracking-tight mb-6 pb-1 animate-fade-up"
+              style={{ animationDelay: '200ms', fontSize: 'clamp(40px, 5.7vw, 66px)' }}
             >
               <span className="text-content-primary">
                 {lang === 'en' ? hero.headline.en[0] : hero.headline.id[0]}

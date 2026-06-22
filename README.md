@@ -1,6 +1,6 @@
 # smooth — Landing Page
 
-**Stack:** Next.js 14 · TypeScript · Tailwind CSS · Static Export
+**Stack:** Next.js 15 · TypeScript · Tailwind CSS · Static Export
 
 ## Struktur Project
 
@@ -74,9 +74,29 @@ Cari dan replace `https://github.com/your-org/native-openclaw` di:
 
 ## Build & Deploy ke Cloudflare Pages
 
+Project ini sudah disiapkan untuk Cloudflare Pages sebagai static Next.js export:
+
+- `next.config.mjs` memakai `output: 'export'`, sehingga `npm run build` menghasilkan folder `out/`.
+- `wrangler.toml` memakai `pages_build_output_dir = "./out"`.
+- `.node-version` memakai Node 22 agar build Cloudflare kompatibel dengan Next.js 15.
+- `public/_headers` akan ikut masuk ke `out/_headers` untuk security headers dan cache aset Next.js.
+
 ```bash
 npm run build
 # Output: out/
+```
+
+**Preview lokal via Wrangler:**
+
+```bash
+npm run cloudflare:preview
+```
+
+**Deploy via Wrangler:**
+
+```bash
+npx wrangler login
+npm run cloudflare:deploy
 ```
 
 **Via Direct Upload (tanpa GitHub):**
@@ -95,6 +115,7 @@ Di Cloudflare Pages:
 - Framework preset: `Next.js (Static HTML Export)`
 - Build command: `npm run build`
 - Build output directory: `out`
+- Node version: `22` (otomatis dari `.node-version`)
 
 ## Warna Brand
 

@@ -22,20 +22,20 @@ export const navCta = { en: 'Get Started', id: 'Mulai' }
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 export const hero = {
-  badge: { en: 'Self-Hosted AI Agent', id: 'AI Agent Self-Hosted' },
+  badge: { en: 'Self-Evolving Agentic AI', id: 'Agentic AI Self-Evolving' },
   headline: {
-    en: ['Make your workflow', 'actually flow.'],
-    id: ['Buat workflow kamu', 'benar-benar lancar.'],
+    en: ['Agentic AI superpowers', 'for your daily workflow.'],
+    id: ['Superpower Agentic AI', 'untuk workflow harianmu.'],
   },
   sub: {
-    en: 'smooth is a self-hosted AI agent built on native-openclaw. It reasons, executes tools, heals its own bugs, and upgrades itself — across CLI, Web UI, Telegram, and Docker. One agent. Many providers. Full control.',
-    id: 'smooth adalah AI agent self-hosted yang dibangun di atas native-openclaw. Ia berpikir, menjalankan tool, memperbaiki bug sendiri, dan upgrade otomatis — lewat CLI, Web UI, Telegram, dan Docker. Satu agent. Banyak provider. Kendali penuh.',
+    en: 'smooth is a self-hosted AI agent built on native-openclaw. It improves from your workflow, configures its own tools, heals broken code, and upgrades itself with new capabilities. One agent. Many providers. Full control.',
+    id: 'smooth adalah AI agent self-hosted yang dibangun di atas native-openclaw. Ia belajar dari workflow kamu, mengatur tool-nya sendiri, memperbaiki code yang rusak, dan meng-upgrade dirinya dengan kemampuan baru. Satu agent. Banyak provider. Kendali penuh.',
   },
   ctaPrimary:   { en: 'Get Started',    id: 'Mulai Sekarang'  },
   ctaSecondary: { en: 'View on GitHub', id: 'Lihat di GitHub' },
   trust: {
-    en: 'Open source · TypeScript · Zero framework lock-in',
-    id: 'Open source · TypeScript · Tanpa framework lock-in',
+    en: 'Improve · Configure · Heal · Upgrade · Fully self-hosted',
+    id: 'Improve · Configure · Heal · Upgrade · Sepenuhnya self-hosted',
   },
   pitch: {
     en: 'One agent. Many providers. Self-healing. Self-upgrade. Runs local. Integrates into your workflow.',
